@@ -36,3 +36,15 @@ to this URL informing the status for the cal
     - don't put this logic in the frontend
   - don't use a database, maintain state in memory 
     - can assume theres only one user, and the user only dials down the lsit of numbers once
+
+  ### Backend Pedac
+   1. Button gets clicked on the front end sending POST request to our backend /call
+   2. Within our backend /call route the following must happen:
+    - we dequeue three numbers from the phoneNumbers array
+    - push each number in global activeCalls array
+    - make a /post request to the API for each with the phone number and webhook url body
+    - take axios response body and update callId in activeCalls array
+  3. Our webhook handler recieves a post request for each call with callId and status update. We need to the following:
+    - update the call in activeCalls with the new status -- match the callIds
+    - Sent event to frontend with the udpated call object
+    

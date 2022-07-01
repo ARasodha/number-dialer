@@ -3,7 +3,7 @@ import PhoneBook from './PhoneBook';
 function App() {
   return (
    <div>
-    Hello world
+    <PhoneBook />
    </div>
   );
 }

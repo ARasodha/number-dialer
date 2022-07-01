@@ -1,6 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Phonecall = ({ number }) => {
-  const [status, setStatus] = useState('idle');
+const PhoneCall = ({ number }) => {
+  return (
+    <li>{number.phone} {number.status}</li>
+  )
 }
+
+export default PhoneCall;
